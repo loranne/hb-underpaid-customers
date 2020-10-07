@@ -14,13 +14,14 @@ def gets_payment_discrepancies(orderfile):
         customer_num, customer_name, melons_purchased, amount_paid = order
         # probably a neater way to do this, but need amount paid to be a float
         amount_paid = float(amount_paid)
+        melons_purchased = float(melons_purchased)
 
         # split off first name
         customer_first_name = customer_name.split()[0]
         # print(customer_first_name)
 
         # calculates how much customer owed 
-        amount_owed = float(melons_purchased) * 1.00
+        amount_owed = melons_purchased * 1.00
 
         # if cust payment not equal to cust owed, print details
         if amount_owed != float(amount_paid):
